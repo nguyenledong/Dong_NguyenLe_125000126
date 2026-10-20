@@ -1,0 +1,1321 @@
+/* ==========================================================================
+   COSMOS EXPLORER - PURE CSS STYLESHEET (100% ZERO JAVASCRIPT)
+   Sinh viên thực hiện: Nguyễn Lê Đông (MSSV: 125000126)
+   Chủ đề: Khám Phá Vũ Trụ & Thiên Văn Học
+   Đặc tả: Chuẩn Semantic HTML5, CSS Variables, Flexbox/Grid, Keyframes Animation
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. KHỐI :root - KHAI BÁO CÁC BIẾN CSS (CSS VARIABLES)
+   -------------------------------------------------------------------------- */
+:root {
+  /* Bảng màu Cosmic Deep Space */
+  --bg-primary: #060812;              /* Nền vũ trụ sâu thẳm */
+  --bg-secondary: #0c1022;            /* Nền thứ cấp */
+  --bg-surface: #121833;              /* Nền bề mặt khối */
+  --bg-card: rgba(18, 24, 51, 0.72);  /* Nền kính mờ (Glassmorphism) */
+  --bg-card-hover: rgba(26, 36, 74, 0.88);
+
+  --primary-color: #00d2ff;           /* Neon Cyan - Sắc màu chủ đạo */
+  --primary-glow: rgba(0, 210, 255, 0.4);
+  --secondary-color: #9d4edd;         /* Cosmic Purple - Tím dải ngân hà */
+  --secondary-glow: rgba(157, 78, 221, 0.35);
+  --accent-color: #ffb703;            /* Stellar Gold - Vàng thiên thạch */
+  --accent-glow: rgba(255, 183, 3, 0.4);
+
+  /* Màu văn bản (Typography) */
+  --text-main: #f8fafc;               /* Màu chữ chính */
+  --text-muted: #94a3b8;              /* Màu chữ mô tả */
+  --text-dimmed: #64748b;             /* Màu chữ chú thích */
+
+  /* Viền và hiệu ứng kính mờ */
+  --border-light: rgba(255, 255, 255, 0.1);
+  --border-hover: rgba(0, 210, 255, 0.55);
+  --glass-blur: blur(16px);
+
+  /* Font chữ chuẩn */
+  --font-family-base: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-family-heading: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Thang khoảng cách (Spacing Scale) */
+  --space-2xs: 0.25rem;  /* 4px */
+  --space-xs: 0.5rem;    /* 8px */
+  --space-sm: 0.75rem;   /* 12px */
+  --space-md: 1rem;      /* 16px */
+  --space-lg: 1.5rem;    /* 24px */
+  --space-xl: 2rem;      /* 32px */
+  --space-2xl: 3rem;     /* 48px */
+  --space-3xl: 5rem;     /* 80px */
+
+  /* Bán kính bo góc (Border Radius) */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-full: 9999px;
+
+  /* Thời gian chuyển động (Transitions) */
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-smooth: 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Hiệu ứng bóng đổ (Box Shadows) */
+  --shadow-sm: 0 4px 14px rgba(0, 0, 0, 0.35);
+  --shadow-md: 0 8px 26px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.65);
+  --shadow-glow: 0 0 25px var(--primary-glow);
+  --shadow-purple: 0 0 25px var(--secondary-glow);
+}
+
+/* --------------------------------------------------------------------------
+   2. RESET CSS & ĐỊNH DẠNG CƠ BẢN
+   -------------------------------------------------------------------------- */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-family-base);
+  background-color: var(--bg-primary);
+  color: var(--text-main);
+  line-height: 1.65;
+  overflow-x: hidden;
+  background-image: 
+    radial-gradient(circle at 12% 18%, rgba(157, 78, 221, 0.12) 0%, transparent 40%),
+    radial-gradient(circle at 88% 50%, rgba(0, 210, 255, 0.1) 0%, transparent 40%),
+    radial-gradient(circle at 50% 92%, rgba(255, 183, 3, 0.06) 0%, transparent 50%);
+  background-attachment: fixed;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+ul {
+  list-style: none;
+}
+
+button, input, textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+  border: none;
+  outline: none;
+  background: none;
+}
+
+/* Container bố cục */
+.container {
+  width: 100%;
+  max-width: 1240px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--space-lg);
+  padding-right: var(--space-lg);
+}
+
+.section-padding {
+  padding-top: var(--space-3xl);
+  padding-bottom: var(--space-3xl);
+}
+
+/* --------------------------------------------------------------------------
+   3. TYPOGRAPHY & SECTION HEADERS
+   -------------------------------------------------------------------------- */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-family-heading);
+  color: var(--text-main);
+  line-height: 1.25;
+  font-weight: 700;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, var(--primary-color) 0%, #a855f7 50%, var(--accent-color) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.section-header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto var(--space-3xl) auto;
+}
+
+.section-subtitle {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--primary-color);
+  background: rgba(0, 210, 255, 0.1);
+  border: 1px solid rgba(0, 210, 255, 0.25);
+  padding: 0.35rem 0.9rem;
+  border-radius: var(--radius-full);
+  margin-bottom: var(--space-sm);
+}
+
+.section-title {
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
+  letter-spacing: -0.5px;
+  margin-bottom: var(--space-sm);
+}
+
+.section-desc {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+}
+
+/* --------------------------------------------------------------------------
+   4. CÁC HIỆU ỨNG CSS THUẦN (KEYFRAMES ANIMATIONS)
+   -------------------------------------------------------------------------- */
+/* Hiệu ứng trôi bồng bềnh không gian */
+@keyframes cosmicFloat {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-12px) rotate(1.5deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+/* Hiệu ứng phát sáng lấp lánh sao */
+@keyframes pulseGlow {
+  0% { transform: translate(-50%, -50%) scale(0.92); opacity: 0.55; }
+  100% { transform: translate(-50%, -50%) scale(1.15); opacity: 0.95; }
+}
+
+/* Hiệu ứng xoay quỹ đạo vệ tinh */
+@keyframes orbitRotate {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* --------------------------------------------------------------------------
+   5. NÚT BẤM (BUTTONS) & HIỆU ỨNG HOVER / FOCUS
+   -------------------------------------------------------------------------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs);
+  padding: 0.85rem 1.85rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #00d2ff 0%, #3a7bd5 100%);
+  color: #060812;
+  font-weight: 700;
+  box-shadow: 0 4px 18px var(--primary-glow);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 8px 28px rgba(0, 210, 255, 0.65);
+  color: #000;
+}
+
+.btn-primary:focus-visible {
+  outline: 3px solid var(--primary-color);
+  outline-offset: 4px;
+}
+
+.btn-outline {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-light);
+  color: var(--text-main);
+  backdrop-filter: var(--glass-blur);
+}
+
+.btn-outline:hover {
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+  background: rgba(0, 210, 255, 0.1);
+  box-shadow: var(--shadow-glow);
+  transform: translateY(-2px);
+}
+
+.btn-outline:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 3px;
+}
+
+.btn-block {
+  width: 100%;
+}
+
+/* --------------------------------------------------------------------------
+   6. HEADER & THANH ĐIỀU HƯỚNG (NAV) THUẦN CSS
+   -------------------------------------------------------------------------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background: rgba(6, 8, 18, 0.85);
+  backdrop-filter: var(--glass-blur);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+  position: relative;
+}
+
+/* Logo */
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.logo-icon {
+  width: 42px;
+  height: 42px;
+  background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-md);
+  color: #fff;
+  font-size: 1.2rem;
+  box-shadow: 0 0 16px var(--primary-glow);
+  transition: transform var(--transition-normal);
+}
+
+.brand-logo:hover .logo-icon {
+  transform: rotate(20deg) scale(1.08);
+}
+
+.brand-text {
+  font-family: var(--font-family-heading);
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--text-main);
+  letter-spacing: -0.5px;
+}
+
+.brand-text strong {
+  color: var(--primary-color);
+  font-weight: 700;
+}
+
+/* Menu điều hướng (Desktop) */
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2xl);
+}
+
+.nav-list {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xl);
+}
+
+.nav-link {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  position: relative;
+  padding: 0.4rem 0;
+  transition: color var(--transition-fast);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  transition: width var(--transition-normal);
+  border-radius: var(--radius-full);
+}
+
+.nav-link:hover,
+.nav-link:focus-visible {
+  color: var(--text-main);
+}
+
+.nav-link:hover::after,
+.nav-link:focus-visible::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+.nav-link.active {
+  color: var(--primary-color);
+}
+
+.nav-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: 0.55rem 1.25rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  background: rgba(0, 210, 255, 0.1);
+  border: 1px solid rgba(0, 210, 255, 0.3);
+  border-radius: var(--radius-full);
+  color: var(--primary-color);
+  transition: all var(--transition-normal);
+}
+
+.nav-cta-btn:hover {
+  background: var(--primary-color);
+  color: #060812;
+  box-shadow: var(--shadow-glow);
+  transform: translateY(-2px);
+}
+
+/* CSS Checkbox Hack cho Mobile Menu (100% không dùng JavaScript) */
+.nav-toggle-input {
+  display: none;
+}
+
+.nav-toggle-btn {
+  display: none;
+  cursor: pointer;
+  width: 32px;
+  height: 24px;
+  position: relative;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.hamburger-bar {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: var(--text-main);
+  border-radius: 2px;
+  transition: all var(--transition-normal);
+}
+
+/* --------------------------------------------------------------------------
+   7. HERO BANNER SECTION
+   -------------------------------------------------------------------------- */
+.hero-section {
+  position: relative;
+  min-height: calc(100vh - 80px);
+  display: flex;
+  align-items: center;
+  padding-top: var(--space-2xl);
+  padding-bottom: var(--space-3xl);
+  overflow: hidden;
+}
+
+.hero-stars-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(ellipse at 85% 25%, rgba(0, 210, 255, 0.16) 0%, transparent 60%),
+    radial-gradient(ellipse at 15% 75%, rgba(157, 78, 221, 0.16) 0%, transparent 60%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero-wrapper {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  align-items: center;
+  gap: var(--space-3xl);
+}
+
+.hero-content {
+  max-width: 660px;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  background: rgba(157, 78, 221, 0.15);
+  border: 1px solid rgba(157, 78, 221, 0.35);
+  color: #d8b4fe;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.4rem 1rem;
+  border-radius: var(--radius-full);
+  margin-bottom: var(--space-md);
+}
+
+.hero-title {
+  font-size: clamp(2.3rem, 4.2vw, 3.8rem);
+  letter-spacing: -1px;
+  margin-bottom: var(--space-md);
+}
+
+.hero-description {
+  font-size: 1.125rem;
+  color: var(--text-muted);
+  margin-bottom: var(--space-xl);
+  line-height: 1.7;
+}
+
+.hero-cta-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  margin-bottom: var(--space-2xl);
+}
+
+.hero-stats {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2xl);
+  padding-top: var(--space-lg);
+  border-top: 1px solid var(--border-light);
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-number {
+  font-family: var(--font-family-heading);
+  font-size: 1.85rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  line-height: 1.1;
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* Ảnh Hero có hiệu ứng bồng bềnh CSS thuần */
+.hero-visual {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: cosmicFloat 7s infinite ease-in-out;
+}
+
+.cosmic-orbit {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 380px;
+  height: 380px;
+  background: radial-gradient(circle, rgba(0, 210, 255, 0.28) 0%, rgba(157, 78, 221, 0.16) 50%, transparent 70%);
+  filter: blur(40px);
+  z-index: -1;
+  animation: pulseGlow 5s infinite alternate ease-in-out;
+}
+
+.hero-img {
+  width: 100%;
+  max-width: 440px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-lg), var(--shadow-glow);
+  transition: transform var(--transition-smooth);
+}
+
+.hero-img:hover {
+  transform: scale(1.03);
+}
+
+.hero-caption {
+  margin-top: var(--space-sm);
+  font-size: 0.825rem;
+  color: var(--text-dimmed);
+  text-align: center;
+}
+
+/* --------------------------------------------------------------------------
+   8. SECTION HỆ MẶT TRỜI (PLANET CARDS)
+   -------------------------------------------------------------------------- */
+.solar-section {
+  background: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+}
+
+.planets-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: var(--space-xl);
+}
+
+/* Card Hành tinh Semantic <article> */
+.planet-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  backdrop-filter: var(--glass-blur);
+  display: flex;
+  flex-direction: column;
+  transition: all var(--transition-smooth);
+  position: relative;
+}
+
+.planet-card:hover {
+  transform: translateY(-10px);
+  border-color: var(--border-hover);
+  box-shadow: var(--shadow-md), var(--shadow-glow);
+  background: var(--bg-card-hover);
+}
+
+.planet-card:focus-within {
+  border-color: var(--primary-color);
+  box-shadow: var(--shadow-glow);
+}
+
+.planet-card.highlight-card {
+  border-color: rgba(0, 210, 255, 0.4);
+  box-shadow: 0 0 22px rgba(0, 210, 255, 0.15);
+}
+
+.card-media {
+  position: relative;
+  overflow: hidden;
+  height: 220px;
+  background: radial-gradient(circle at center, #1e293b 0%, #0a0e1a 100%);
+}
+
+.card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-smooth);
+}
+
+.planet-card:hover .card-img {
+  transform: scale(1.08);
+}
+
+.card-badge {
+  position: absolute;
+  top: var(--space-sm);
+  right: var(--space-sm);
+  background: rgba(6, 8, 18, 0.85);
+  backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--border-light);
+  color: var(--text-main);
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-full);
+}
+
+.badge-glow {
+  background: rgba(0, 210, 255, 0.2);
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+}
+
+.card-content {
+  padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.card-order {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--primary-color);
+  letter-spacing: 1.5px;
+  margin-bottom: var(--space-2xs);
+}
+
+.card-title {
+  font-size: 1.35rem;
+  margin-bottom: var(--space-xs);
+}
+
+.card-text {
+  font-size: 0.925rem;
+  color: var(--text-muted);
+  margin-bottom: var(--space-md);
+  flex-grow: 1;
+}
+
+/* Danh sách thông số hành tinh */
+.specs-list {
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: var(--radius-md);
+  padding: var(--space-sm);
+  margin-bottom: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xs);
+}
+
+.specs-list li {
+  font-size: 0.825rem;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.specs-list li i {
+  color: var(--primary-color);
+  width: 16px;
+}
+
+.specs-list li span {
+  flex-grow: 1;
+}
+
+.specs-list li strong {
+  color: var(--text-main);
+}
+
+.card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  transition: gap var(--transition-fast), color var(--transition-fast);
+}
+
+.card-link:hover {
+  gap: var(--space-sm);
+  color: #fff;
+}
+
+.card-link:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
+
+/* --------------------------------------------------------------------------
+   9. SECTION SỨ MỆNH KHÔNG GIAN (MISSION ARTICLES)
+   -------------------------------------------------------------------------- */
+.missions-section {
+  background-color: var(--bg-primary);
+}
+
+.missions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+  gap: var(--space-xl);
+}
+
+/* Thẻ sứ mệnh Semantic <article> */
+.mission-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  backdrop-filter: var(--glass-blur);
+  transition: all var(--transition-normal);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.mission-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 0%;
+  background: linear-gradient(180deg, var(--primary-color), var(--secondary-color));
+  transition: height var(--transition-normal);
+  border-top-left-radius: var(--radius-lg);
+  border-bottom-left-radius: var(--radius-lg);
+}
+
+.mission-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(157, 78, 221, 0.45);
+  box-shadow: var(--shadow-md), var(--shadow-purple);
+  background: var(--bg-card-hover);
+}
+
+.mission-card:hover::before {
+  height: 100%;
+}
+
+.mission-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-sm);
+}
+
+.mission-date {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--accent-color);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.mission-agency {
+  font-size: 0.8rem;
+  color: var(--text-dimmed);
+  background: rgba(255, 255, 255, 0.05);
+  padding: 0.2rem 0.65rem;
+  border-radius: var(--radius-full);
+}
+
+.mission-title {
+  font-size: 1.35rem;
+  margin-bottom: var(--space-sm);
+}
+
+.mission-text {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+  margin-bottom: var(--space-lg);
+  flex-grow: 1;
+}
+
+.mission-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+}
+
+.tag {
+  font-size: 0.775rem;
+  font-weight: 500;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-light);
+  color: var(--text-muted);
+  padding: 0.28rem 0.75rem;
+  border-radius: var(--radius-full);
+  transition: all var(--transition-fast);
+}
+
+.mission-card:hover .tag {
+  border-color: rgba(0, 210, 255, 0.35);
+  color: var(--text-main);
+}
+
+/* --------------------------------------------------------------------------
+   10. SECTION KỲ QUAN & BÍ ẨN THIÊN VĂN
+   -------------------------------------------------------------------------- */
+.mysteries-section {
+  background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-surface) 100%);
+}
+
+.mysteries-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-xl);
+}
+
+.mystery-item {
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  text-align: center;
+  backdrop-filter: var(--glass-blur);
+  transition: all var(--transition-normal);
+}
+
+.mystery-item:hover {
+  transform: translateY(-8px);
+  border-color: var(--accent-color);
+  box-shadow: 0 12px 30px var(--accent-glow);
+}
+
+.mystery-icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto var(--space-md) auto;
+  border-radius: 50%;
+  background: rgba(255, 183, 3, 0.1);
+  border: 1px solid rgba(255, 183, 3, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent-color);
+  font-size: 1.75rem;
+  transition: transform var(--transition-normal);
+}
+
+.mystery-item:hover .mystery-icon {
+  transform: rotate(360deg) scale(1.1);
+}
+
+.mystery-title {
+  font-size: 1.25rem;
+  margin-bottom: var(--space-xs);
+}
+
+.mystery-desc {
+  font-size: 0.925rem;
+  color: var(--text-muted);
+}
+
+/* --------------------------------------------------------------------------
+   11. SECTION LIÊN HỆ & FORM (THUẦN HTML/CSS)
+   -------------------------------------------------------------------------- */
+.contact-section {
+  background-color: var(--bg-primary);
+}
+
+.contact-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: var(--space-2xl);
+  align-items: start;
+}
+
+/* Thẻ trạm liên hệ */
+.station-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  backdrop-filter: var(--glass-blur);
+}
+
+.station-title {
+  font-size: 1.5rem;
+  margin-bottom: var(--space-sm);
+}
+
+.station-desc {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin-bottom: var(--space-xl);
+}
+
+.station-info-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.station-info-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-md);
+}
+
+.info-ico {
+  width: 44px;
+  height: 44px;
+  background: rgba(0, 210, 255, 0.12);
+  border: 1px solid rgba(0, 210, 255, 0.25);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-color);
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.station-info-list small {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  display: block;
+}
+
+.station-info-list strong {
+  color: var(--text-main);
+  font-size: 1rem;
+}
+
+/* Form liên hệ thuần CSS */
+.contact-form {
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  backdrop-filter: var(--glass-blur);
+}
+
+.form-group {
+  margin-bottom: var(--space-md);
+}
+
+.form-label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: var(--space-2xs);
+  color: var(--text-main);
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.85rem 1.1rem;
+  background: rgba(6, 8, 18, 0.65);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  color: var(--text-main);
+  font-size: 0.95rem;
+  transition: all var(--transition-normal);
+}
+
+.form-input::placeholder {
+  color: var(--text-dimmed);
+}
+
+.form-input:hover {
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+.form-input:focus {
+  border-color: var(--primary-color);
+  background: rgba(6, 8, 18, 0.9);
+  box-shadow: 0 0 16px var(--primary-glow);
+}
+
+select.form-input option {
+  background-color: var(--bg-surface);
+  color: var(--text-main);
+}
+
+/* --------------------------------------------------------------------------
+   12. FOOTER (CHÂN TRANG)
+   -------------------------------------------------------------------------- */
+.site-footer {
+  background: #030409;
+  border-top: 1px solid var(--border-light);
+  padding-top: var(--space-3xl);
+}
+
+.footer-top {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1.5fr;
+  gap: var(--space-2xl);
+  padding-bottom: var(--space-2xl);
+}
+
+.footer-summary {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-top: var(--space-md);
+  margin-bottom: var(--space-lg);
+  max-width: 360px;
+}
+
+.social-box {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.social-link {
+  width: 38px;
+  height: 38px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-light);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  transition: all var(--transition-normal);
+}
+
+.social-link:hover {
+  background: var(--primary-color);
+  color: #000;
+  box-shadow: 0 0 15px var(--primary-glow);
+  transform: translateY(-3px);
+}
+
+.social-link:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 3px;
+}
+
+.footer-title {
+  font-size: 1.15rem;
+  margin-bottom: var(--space-lg);
+  position: relative;
+  padding-bottom: var(--space-2xs);
+}
+
+.footer-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 30px;
+  height: 2px;
+  background: var(--primary-color);
+}
+
+.footer-nav li {
+  margin-bottom: var(--space-sm);
+}
+
+.footer-nav a {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  transition: all var(--transition-fast);
+}
+
+.footer-nav a i {
+  font-size: 0.75rem;
+  color: var(--primary-color);
+  transition: transform var(--transition-fast);
+}
+
+.footer-nav a:hover {
+  color: var(--primary-color);
+  transform: translateX(4px);
+}
+
+.footer-nav a:hover i {
+  transform: translateX(2px);
+}
+
+/* Thẻ thông tin sinh viên chân trang */
+.student-info-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(0, 210, 255, 0.25);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.student-info-card p {
+  font-size: 0.885rem;
+  color: var(--text-muted);
+}
+
+.student-info-card i {
+  color: var(--primary-color);
+  width: 20px;
+}
+
+.student-info-card strong {
+  color: #fff;
+  font-size: 1rem;
+}
+
+.student-info-card mark {
+  background: rgba(0, 210, 255, 0.2);
+  color: var(--primary-color);
+  padding: 0.15rem 0.5rem;
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+}
+
+.student-desc {
+  font-size: 0.8rem !important;
+  color: var(--text-dimmed) !important;
+  border-top: 1px dashed var(--border-light);
+  padding-top: var(--space-xs);
+  margin-top: var(--space-2xs);
+}
+
+/* Thanh copyright đáy trang */
+.footer-bottom {
+  border-top: 1px solid var(--border-light);
+  padding-top: var(--space-lg);
+  padding-bottom: var(--space-lg);
+  font-size: 0.85rem;
+  color: var(--text-dimmed);
+}
+
+.footer-bottom-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+}
+
+.copyright-line strong {
+  color: var(--text-muted);
+}
+
+.tech-stack-line {
+  font-size: 0.8rem;
+  color: var(--primary-color);
+  opacity: 0.85;
+}
+
+/* --------------------------------------------------------------------------
+   13. RESPONSIVE DESIGN (MEDIA QUERIES) & CSS CHECKBOX TOGGLE
+   -------------------------------------------------------------------------- */
+/* Tablet (<= 1024px) */
+@media (max-width: 1024px) {
+  .hero-wrapper {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: var(--space-2xl);
+  }
+
+  .hero-content {
+    margin: 0 auto;
+  }
+
+  .hero-cta-group,
+  .hero-stats {
+    justify-content: center;
+  }
+
+  .hero-visual {
+    order: -1;
+  }
+
+  .hero-img {
+    max-width: 360px;
+  }
+
+  .contact-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-top {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .student-column {
+    grid-column: 1 / -1;
+  }
+}
+
+/* Mobile & Tablet nhỏ (<= 768px) */
+@media (max-width: 768px) {
+  /* Hiển thị nút Hamburger */
+  .nav-toggle-btn {
+    display: flex;
+  }
+
+  /* Ẩn menu mặc định */
+  .main-nav {
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    background: rgba(6, 8, 18, 0.98);
+    backdrop-filter: var(--glass-blur);
+    border-bottom: 1px solid var(--border-light);
+    padding: var(--space-lg) var(--space-xl);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-lg);
+    transform: translateY(-130%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all var(--transition-normal);
+  }
+
+  .nav-list {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-md);
+    width: 100%;
+  }
+
+  .nav-cta-btn {
+    display: none;
+  }
+
+  /* Kỹ thuật CSS Checkbox Hack: Mở menu khi checkbox được checked (KHÔNG DÙNG JS) */
+  .nav-toggle-input:checked ~ .main-nav {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* Biến đổi icon Hamburger thành dấu X khi checked */
+  .nav-toggle-input:checked + .nav-toggle-btn .hamburger-bar:nth-child(1) {
+    transform: translateY(10.5px) rotate(45deg);
+  }
+
+  .nav-toggle-input:checked + .nav-toggle-btn .hamburger-bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .nav-toggle-input:checked + .nav-toggle-btn .hamburger-bar:nth-child(3) {
+    transform: translateY(-10.5px) rotate(-45deg);
+  }
+
+  .missions-grid,
+  .planets-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-top {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+  }
+
+  .footer-bottom-flex {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* Smartphone nhỏ (<= 480px) */
+@media (max-width: 480px) {
+  :root {
+    --space-3xl: 3.5rem;
+  }
+
+  .hero-title {
+    font-size: 2.1rem;
+  }
+
+  .hero-stats {
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  .hero-cta-group .btn {
+    width: 100%;
+  }
+
+  .station-card,
+  .contact-form {
+    padding: var(--space-lg);
+  }
+}
