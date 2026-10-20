@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="vi">
 <head>
@@ -501,3 +502,508 @@
 
 </body>
 </html>
+=======
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Cosmos Explorer - Cổng thông tin Khám phá Vũ trụ & Thiên văn học hàng đầu. Đồ án Landing Page thực hiện bởi sinh viên Nguyễn Lê Đông - MSSV: 125000126.">
+  <meta name="keywords" content="Vũ trụ, Thiên văn học, Hệ Mặt Trời, Sứ mệnh không gian, Cosmos Explorer, Nguyễn Lê Đông, MSSV 125000126">
+  <meta name="author" content="Nguyễn Lê Đông - MSSV: 125000126">
+  <title>Cosmos Explorer | Khám Phá Vũ Trụ & Thiên Văn Học</title>
+
+  <!-- Google Fonts: Space Grotesk & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome 6 (Bộ Icon vũ trụ) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Thư viện hiệu ứng CSS thuần Animate.css CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+  <!-- Tệp định dạng CSS thuần của dự án -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ==================== 1. HEADER & NAVIGATION ==================== -->
+  <header class="site-header">
+    <div class="header-inner container">
+      <!-- Logo và Tiêu đề website -->
+      <a href="#home" class="brand-logo" aria-label="Cosmos Explorer - Trang chủ">
+        <span class="logo-icon animate__animated animate__pulse animate__infinite">
+          <i class="fa-solid fa-satellite-dish"></i>
+        </span>
+        <span class="brand-text">Cosmos<strong>Explorer</strong></span>
+      </a>
+
+      <!-- Kỹ thuật CSS Checkbox Hack: Điều khiển Menu Mobile 100% bằng CSS, KHÔNG dùng JavaScript -->
+      <input type="checkbox" id="nav-toggle" class="nav-toggle-input" aria-label="Bật tắt menu điều hướng">
+      <label for="nav-toggle" class="nav-toggle-btn" aria-label="Nút mở menu">
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+      </label>
+
+      <!-- Menu Điều hướng Semantic <nav> -->
+      <nav class="main-nav" aria-label="Thanh điều hướng chính">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="#home" class="nav-link active">Trang Chủ</a></li>
+          <li class="nav-item"><a href="#solar-system" class="nav-link">Hệ Mặt Trời</a></li>
+          <li class="nav-item"><a href="#missions" class="nav-link">Sứ Mệnh</a></li>
+          <li class="nav-item"><a href="#mysteries" class="nav-link">Kỳ Quan</a></li>
+          <li class="nav-item"><a href="#contact" class="nav-link">Liên Hệ</a></li>
+        </ul>
+        <a href="#solar-system" class="nav-cta-btn">
+          <i class="fa-solid fa-compass"></i> Khám Phá
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ==================== 2. MAIN CONTENT ==================== -->
+  <main class="main-content">
+
+    <!-- HERO SECTION: Khối giới thiệu tổng quan -->
+    <section id="home" class="hero-section" aria-label="Giới thiệu Cosmos Explorer">
+      <div class="hero-stars-overlay"></div>
+
+      <div class="hero-wrapper container">
+        <div class="hero-content">
+          <span class="hero-badge animate__animated animate__fadeInDown">
+            <i class="fa-solid fa-sparkles"></i> Tri Thức Khoa Học Không Gian
+          </span>
+          <h1 class="hero-title animate__animated animate__fadeInDown animate__delay-1s">
+            Chinh Phục Bí Ẩn Vô Tận Của <span class="gradient-text">Vũ Trụ Bao La</span>
+          </h1>
+          <p class="hero-description animate__animated animate__fadeInUp animate__delay-1s">
+            Chào mừng bạn đến với <strong>Cosmos Explorer</strong> – nền tảng khám phá các thiên thể trong Thái Dương Hệ, theo dấu những kỳ tích thám hiểm không gian lịch sử và giải mã nguồn gốc của vạn vật.
+          </p>
+
+          <div class="hero-cta-group animate__animated animate__zoomIn animate__delay-2s">
+            <a href="#solar-system" class="btn btn-primary">
+              <i class="fa-solid fa-rocket"></i> Bắt Đầu Hành Trình
+            </a>
+            <a href="#missions" class="btn btn-outline">
+              <i class="fa-solid fa-circle-play"></i> Sứ Mệnh Lịch Sử
+            </a>
+          </div>
+
+          <!-- Các chỉ số thiên văn ấn tượng -->
+          <div class="hero-stats animate__animated animate__fadeInUp animate__delay-2s">
+            <div class="stat-item">
+              <span class="stat-number">8</span>
+              <span class="stat-label">Hành Tinh Chính</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">13.8B</span>
+              <span class="stat-label">Năm Tuổi Vũ Trụ</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">200B+</span>
+              <span class="stat-label">Thiên Hà Đã Biết</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Khung ảnh minh họa Hero kết hợp hiệu ứng CSS thuần -->
+        <figure class="hero-visual animate__animated animate__fadeInRight animate__delay-1s">
+          <div class="cosmic-orbit"></div>
+          <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=900&q=80" alt="Góc nhìn Trái Đất và Vũ Trụ từ quỹ đạo không gian" class="hero-img">
+          <figcaption class="hero-caption">
+            <i class="fa-solid fa-earth-americas"></i> Hành tinh Xanh - Cái nôi nuôi dưỡng sự sống
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- SECTION: KHÁM PHÁ HỆ MẶT TRỜI -->
+    <section id="solar-system" class="solar-section section-padding" aria-label="Các hành tinh trong hệ mặt trời">
+      <div class="container">
+        <!-- Tiêu đề phân đoạn Semantic <header> -->
+        <header class="section-header">
+          <span class="section-subtitle"><i class="fa-solid fa-sun"></i> Thái Dương Hệ</span>
+          <h2 class="section-title">Các Hành Tinh Tiêu Biểu</h2>
+          <p class="section-desc">Khám phá các thế giới kỳ vĩ đang xoay quanh Mặt Trời cùng những đặc tính vật lý độc nhất vô nhị.</p>
+        </header>
+
+        <!-- Lưới thẻ bài viết Semantic <article> sắp xếp bằng CSS Grid -->
+        <div class="planets-grid">
+
+          <!-- Thẻ hành tinh 1: Sao Thủy -->
+          <article class="planet-card">
+            <figure class="card-media">
+              <img src="https://images.unsplash.com/photo-1614724723656-457e78e0b50b?auto=format&fit=crop&w=600&q=80" alt="Sao Thủy (Mercury)" class="card-img" loading="lazy">
+              <span class="card-badge">Hành Tinh Đất Đá</span>
+            </figure>
+            <div class="card-content">
+              <span class="card-order">Hành tinh số 01</span>
+              <h3 class="card-title">Sao Thủy (Mercury)</h3>
+              <p class="card-text">Hành tinh nhỏ nhất và gần Mặt Trời nhất. Chênh lệch nhiệt độ cực đoan từ -173°C ban đêm đến 427°C ban ngày.</p>
+              <ul class="specs-list">
+                <li><i class="fa-solid fa-ruler-combined"></i> <span>Đường kính:</span> <strong>4,879 km</strong></li>
+                <li><i class="fa-solid fa-route"></i> <span>Cách Mặt Trời:</span> <strong>57.9 triệu km</strong></li>
+                <li><i class="fa-solid fa-arrows-spin"></i> <span>Chu kỳ quỹ đạo:</span> <strong>88 ngày Trái Đất</strong></li>
+              </ul>
+              <a href="#contact" class="card-link">Chi tiết hành tinh <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </article>
+
+          <!-- Thẻ hành tinh 2: Sao Kim -->
+          <article class="planet-card">
+            <figure class="card-media">
+              <img src="https://images.unsplash.com/photo-1614726365723-498aa67c5f7b?auto=format&fit=crop&w=600&q=80" alt="Sao Kim (Venus)" class="card-img" loading="lazy">
+              <span class="card-badge">Hiệu Ứng Nhà Kính</span>
+            </figure>
+            <div class="card-content">
+              <span class="card-order">Hành tinh số 02</span>
+              <h3 class="card-title">Sao Kim (Venus)</h3>
+              <p class="card-text">Được ví như chị em song sinh với Trái Đất về thể tích, nhưng sở hữu bầu khí quyển CO2 dày đặc tạo nhiệt độ nóng nhất (465°C).</p>
+              <ul class="specs-list">
+                <li><i class="fa-solid fa-ruler-combined"></i> <span>Đường kính:</span> <strong>12,104 km</strong></li>
+                <li><i class="fa-solid fa-route"></i> <span>Cách Mặt Trời:</span> <strong>108.2 triệu km</strong></li>
+                <li><i class="fa-solid fa-arrows-spin"></i> <span>Chu kỳ quỹ đạo:</span> <strong>225 ngày Trái Đất</strong></li>
+              </ul>
+              <a href="#contact" class="card-link">Chi tiết hành tinh <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </article>
+
+          <!-- Thẻ hành tinh 3: Trái Đất -->
+          <article class="planet-card highlight-card">
+            <figure class="card-media">
+              <img src="https://images.unsplash.com/photo-1614730321146-b6fa6a46bcb4?auto=format&fit=crop&w=600&q=80" alt="Trái Đất (Earth)" class="card-img" loading="lazy">
+              <span class="card-badge badge-glow">Cái Nôi Sự Sống</span>
+            </figure>
+            <div class="card-content">
+              <span class="card-order">Hành tinh số 03</span>
+              <h3 class="card-title">Trái Đất (Earth)</h3>
+              <p class="card-text">Hành tinh duy nhất có sự sống được xác nhận, với 71% diện tích là nước lỏng và bầu khí quyển giàu oxy, bảo vệ bởi từ trường mạnh.</p>
+              <ul class="specs-list">
+                <li><i class="fa-solid fa-ruler-combined"></i> <span>Đường kính:</span> <strong>12,742 km</strong></li>
+                <li><i class="fa-solid fa-route"></i> <span>Cách Mặt Trời:</span> <strong>149.6 triệu km</strong></li>
+                <li><i class="fa-solid fa-moon"></i> <span>Vệ tinh tự nhiên:</span> <strong>1 (Mặt Trăng)</strong></li>
+              </ul>
+              <a href="#contact" class="card-link">Chi tiết hành tinh <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </article>
+
+          <!-- Thẻ hành tinh 4: Sao Hỏa -->
+          <article class="planet-card">
+            <figure class="card-media">
+              <img src="https://images.unsplash.com/photo-1614728894747-a83421e2b9c9?auto=format&fit=crop&w=600&q=80" alt="Sao Hỏa (Mars)" class="card-img" loading="lazy">
+              <span class="card-badge">Hành Tinh Đỏ</span>
+            </figure>
+            <div class="card-content">
+              <span class="card-order">Hành tinh số 04</span>
+              <h3 class="card-title">Sao Hỏa (Mars)</h3>
+              <p class="card-text">Mục tiêu thuộc địa hóa hàng đầu của nhân loại. Nơi có núi lửa Olympus Mons cao nhất và hẻm núi Valles Marineris sâu nhất Hệ Mặt Trời.</p>
+              <ul class="specs-list">
+                <li><i class="fa-solid fa-ruler-combined"></i> <span>Đường kính:</span> <strong>6,779 km</strong></li>
+                <li><i class="fa-solid fa-route"></i> <span>Cách Mặt Trời:</span> <strong>227.9 triệu km</strong></li>
+                <li><i class="fa-solid fa-stopwatch"></i> <span>Độ dài một ngày:</span> <strong>24h 37m</strong></li>
+              </ul>
+              <a href="#contact" class="card-link">Chi tiết hành tinh <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </article>
+
+          <!-- Thẻ hành tinh 5: Sao Mộc -->
+          <article class="planet-card">
+            <figure class="card-media">
+              <img src="https://images.unsplash.com/photo-1614314169000-4cf229a1db33?auto=format&fit=crop&w=600&q=80" alt="Sao Mộc (Jupiter)" class="card-img" loading="lazy">
+              <span class="card-badge">Khổng Lồ Khí</span>
+            </figure>
+            <div class="card-content">
+              <span class="card-order">Hành tinh số 05</span>
+              <h3 class="card-title">Sao Mộc (Jupiter)</h3>
+              <p class="card-text">Hành tinh có khối lượng gấp đôi tất cả thiên thể khác cộng lại. Vết Đỏ Lớn là một cơn bão xoáy nghịch khổng lồ tồn tại hàng trăm năm.</p>
+              <ul class="specs-list">
+                <li><i class="fa-solid fa-ruler-combined"></i> <span>Đường kính:</span> <strong>139,820 km</strong></li>
+                <li><i class="fa-solid fa-route"></i> <span>Cách Mặt Trời:</span> <strong>778.5 triệu km</strong></li>
+                <li><i class="fa-solid fa-circle-nodes"></i> <span>Số lượng vệ tinh:</span> <strong>95 vệ tinh</strong></li>
+              </ul>
+              <a href="#contact" class="card-link">Chi tiết hành tinh <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </article>
+
+          <!-- Thẻ hành tinh 6: Sao Thổ -->
+          <article class="planet-card">
+            <figure class="card-media">
+              <img src="https://images.unsplash.com/photo-1614732414444-096e5f1122d5?auto=format&fit=crop&w=600&q=80" alt="Sao Thổ (Saturn)" class="card-img" loading="lazy">
+              <span class="card-badge">Vành Đai Băng</span>
+            </figure>
+            <div class="card-content">
+              <span class="card-order">Hành tinh số 06</span>
+              <h3 class="card-title">Sao Thổ (Saturn)</h3>
+              <p class="card-text">Tuyệt tác thẩm mỹ của vũ trụ với hệ vành đai tráng lệ cấu thành từ hàng tỷ hạt băng và bụi đá. Khối lượng riêng nhẹ hơn cả nước.</p>
+              <ul class="specs-list">
+                <li><i class="fa-solid fa-ruler-combined"></i> <span>Đường kính:</span> <strong>116,460 km</strong></li>
+                <li><i class="fa-solid fa-route"></i> <span>Cách Mặt Trời:</span> <strong>1.43 tỷ km</strong></li>
+                <li><i class="fa-solid fa-circle-nodes"></i> <span>Số lượng vệ tinh:</span> <strong>146 vệ tinh</strong></li>
+              </ul>
+              <a href="#contact" class="card-link">Chi tiết hành tinh <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: SỨ MỆNH KHÔNG GIAN LỊCH SỬ -->
+    <section id="missions" class="missions-section section-padding" aria-label="Các sứ mệnh khám phá vũ trụ">
+      <div class="container">
+        <header class="section-header">
+          <span class="section-subtitle"><i class="fa-solid fa-shuttle-space"></i> Dấu Chân Nhân Loại</span>
+          <h2 class="section-title">Những Sứ Mệnh Thay Đổi Lịch Sử</h2>
+          <p class="section-desc">Từng bước tiến vĩ đại đưa trí tuệ và khát vọng của loài người vươn xa tới những miền không gian sâu thẳm.</p>
+        </header>
+
+        <!-- Lưới bài viết sứ mệnh Semantic <article> -->
+        <div class="missions-grid">
+
+          <article class="mission-card">
+            <div class="mission-top">
+              <time datetime="1969-07-20" class="mission-date"><i class="fa-regular fa-calendar-check"></i> 20/07/1969</time>
+              <span class="mission-agency">NASA</span>
+            </div>
+            <h3 class="mission-title">Apollo 11: Bước Chân Đầu Tiên Lên Mặt Trăng</h3>
+            <p class="mission-text">
+              Neil Armstrong và Buzz Aldrin đã làm rung chuyển lịch sử khi đáp Mô-đun Eagle xuống Biển Yên Bình trên Mặt Trăng, mở ra kỷ nguyên thám hiểm liên hành tinh của loài người.
+            </p>
+            <div class="mission-tags">
+              <span class="tag">Mặt Trăng</span>
+              <span class="tag">Saturn V</span>
+              <span class="tag">Apollo</span>
+            </div>
+          </article>
+
+          <article class="mission-card">
+            <div class="mission-top">
+              <time datetime="2021-12-25" class="mission-date"><i class="fa-regular fa-calendar-check"></i> 25/12/2021</time>
+              <span class="mission-agency">NASA / ESA / CSA</span>
+            </div>
+            <h3 class="mission-title">James Webb (JWST): Con Mắt Nhìn Về Vũ Trụ Nguyên Thủy</h3>
+            <p class="mission-text">
+              Kính viễn vọng không gian hồng ngoại hiện đại nhất nhân loại từng chế tạo. Đặt tại điểm Lagrange L2, mang lại những bức ảnh sắc nét về các thiên hà đầu tiên sau vụ nổ Big Bang.
+            </p>
+            <div class="mission-tags">
+              <span class="tag">Kính Hồng Ngoại</span>
+              <span class="tag">Điểm L2</span>
+              <span class="tag">Gương Vàng</span>
+            </div>
+          </article>
+
+          <article class="mission-card">
+            <div class="mission-top">
+              <time datetime="1977-09-05" class="mission-date"><i class="fa-regular fa-calendar-check"></i> 05/09/1977</time>
+              <span class="mission-agency">NASA JPL</span>
+            </div>
+            <h3 class="mission-title">Voyager 1: Chuyến Du Hành Vào Không Gian Liên Sao</h3>
+            <p class="mission-text">
+              Vật thể nhân tạo đi xa nhất từng được phóng đi, đã vượt qua biên giới nhật quyển (Heliosphere) để tiến vào không gian giữa các vì sao, mang theo Đĩa Ghi Vàng chứa thông điệp hòa bình.
+            </p>
+            <div class="mission-tags">
+              <span class="tag">24+ Tỷ km</span>
+              <span class="tag">Đĩa Ghi Vàng</span>
+              <span class="tag">Liên Sao</span>
+            </div>
+          </article>
+
+          <article class="mission-card">
+            <div class="mission-top">
+              <time datetime="2024-2030" class="mission-date"><i class="fa-solid fa-rocket"></i> Hiện Tại & Tương Lai</time>
+              <span class="mission-agency">Liên Minh Quốc Tế</span>
+            </div>
+            <h3 class="mission-title">Chương Trình Artemis: Tái Chinh Phục & Bàn Đạp Sao Hỏa</h3>
+            <p class="mission-text">
+              Kế hoạch đưa phi hành gia quay trở lại Mặt Trăng, thiết lập căn cứ bền vững Gateway và thử nghiệm công nghệ cho bước nhảy vọt lịch sử tiếp theo: Đặt chân lên Sao Hỏa.
+            </p>
+            <div class="mission-tags">
+              <span class="tag">Trạm Gateway</span>
+              <span class="tag">Tàu Orion</span>
+              <span class="tag">Sao Hỏa</span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: KỲ QUAN & BÍ ẨN THIÊN VĂN -->
+    <section id="mysteries" class="mysteries-section section-padding" aria-label="Kỳ quan và bí ẩn vũ trụ">
+      <div class="container">
+        <header class="section-header">
+          <span class="section-subtitle"><i class="fa-solid fa-meteor"></i> Hiện Tượng Vũ Trụ</span>
+          <h2 class="section-title">Kỳ Quan Huyền Bí Trong Không Gian</h2>
+          <p class="section-desc">Những hiện tượng vật lý thiên văn thách thức mọi giới hạn hiểu biết của vật lý cổ điển.</p>
+        </header>
+
+        <div class="mysteries-grid">
+          <article class="mystery-item">
+            <div class="mystery-icon"><i class="fa-solid fa-circle-notch"></i></div>
+            <h3 class="mystery-title">Lỗ Đen Siêu Khối Lượng</h3>
+            <p class="mystery-desc">Các vùng không-thời gian có lực hấp dẫn cực hạn đến mức ngay cả ánh sáng cũng không thể thoát ra khỏi đường chân trời sự kiện.</p>
+          </article>
+
+          <article class="mystery-item">
+            <div class="mystery-icon"><i class="fa-solid fa-atom"></i></div>
+            <h3 class="mystery-title">Vật Chất Tối & Năng Lượng Tối</h3>
+            <p class="mystery-desc">Chiếm khoảng 95% tổng năng lượng và vật chất của vũ trụ, vô hình trước mọi máy quét quang học và vẫn là ẩn số lớn nhất của khoa học.</p>
+          </article>
+
+          <article class="mystery-item">
+            <div class="mystery-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+            <h3 class="mystery-title">Tinh Vân & Vườn Ươm Sao</h3>
+            <p class="mystery-desc">Các đám mây khí khổng lồ phát sáng lộng lẫy, nơi diễn ra phản ứng nhiệt hạch khai sinh ra những ngôi sao và hệ hành tinh mới.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: LIÊN HỆ & ĐÓNG GÓP -->
+    <section id="contact" class="contact-section section-padding" aria-label="Liên hệ và đóng góp ý kiến">
+      <div class="container">
+        <header class="section-header">
+          <span class="section-subtitle"><i class="fa-regular fa-envelope"></i> Kết Nối Tri Thức</span>
+          <h2 class="section-title">Liên Hệ Với Cosmos Explorer</h2>
+          <p class="section-desc">Bạn muốn đóng góp tư liệu nghiên cứu hoặc có câu hỏi về thiên văn học? Hãy gửi thông điệp cho chúng tôi.</p>
+        </header>
+
+        <div class="contact-wrapper">
+          <!-- Thông tin trạm liên hệ -->
+          <div class="station-card">
+            <h3 class="station-title">Trạm Điều Hành Trực Tuyến</h3>
+            <p class="station-desc">Dự án Landing Page học thuật chuyên đề Vũ trụ & Thiên văn học xây dựng chuẩn Semantic HTML5 và hiệu ứng CSS thuần.</p>
+            
+            <ul class="station-info-list">
+              <li>
+                <span class="info-ico"><i class="fa-solid fa-user-astronaut"></i></span>
+                <div>
+                  <small>Sinh viên thực hiện:</small>
+                  <strong>Nguyễn Lê Đông</strong>
+                </div>
+              </li>
+              <li>
+                <span class="info-ico"><i class="fa-solid fa-id-card"></i></span>
+                <div>
+                  <small>Mã số sinh viên (MSSV):</small>
+                  <strong>125000126</strong>
+                </div>
+              </li>
+              <li>
+                <span class="info-ico"><i class="fa-solid fa-envelope"></i></span>
+                <div>
+                  <small>Email học tập:</small>
+                  <strong>dong.nguyenle@cosmos-explorer.edu.vn</strong>
+                </div>
+              </li>
+              <li>
+                <span class="info-ico"><i class="fa-solid fa-location-dot"></i></span>
+                <div>
+                  <small>Đơn vị / Phòng thí nghiệm:</small>
+                  <strong>Bộ môn Front-End & Thiên văn học ứng dụng</strong>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Form liên hệ thuần HTML (Không dùng JavaScript) -->
+          <form class="contact-form" action="#contact" method="get">
+            <div class="form-group">
+              <label for="contact-name" class="form-label">Họ và Tên</label>
+              <input type="text" id="contact-name" name="name" class="form-input" placeholder="Nhập họ và tên..." required>
+            </div>
+
+            <div class="form-group">
+              <label for="contact-email" class="form-label">Địa Chỉ Email</label>
+              <input type="email" id="contact-email" name="email" class="form-input" placeholder="tenban@email.com" required>
+            </div>
+
+            <div class="form-group">
+              <label for="contact-topic" class="form-label">Chủ Đề Quan Tâm</label>
+              <select id="contact-topic" name="topic" class="form-input" required>
+                <option value="" disabled selected>Chọn chủ đề...</option>
+                <option value="solar">Thái Dương Hệ & Hành Tinh</option>
+                <option value="missions">Sứ Mệnh Không Gian & Tên Lửa</option>
+                <option value="deepspace">Không Gian Sâu & Vật Lý Thiên Văn</option>
+                <option value="academic">Trao Đổi Học Thuật</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="contact-msg" class="form-label">Nội Dung Lời Nhắn</label>
+              <textarea id="contact-msg" name="message" rows="4" class="form-input" placeholder="Nhập câu hỏi hoặc chia sẻ của bạn..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block">
+              <i class="fa-solid fa-paper-plane"></i> Gửi Tin Nhắn
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==================== 3. FOOTER ==================== -->
+  <footer class="site-footer" aria-label="Chân trang website">
+    <div class="footer-top container">
+      <!-- Cột 1: Thương hiệu -->
+      <div class="footer-column brand-column">
+        <a href="#home" class="brand-logo footer-logo">
+          <span class="logo-icon"><i class="fa-solid fa-satellite-dish"></i></span>
+          <span class="brand-text">Cosmos<strong>Explorer</strong></span>
+        </a>
+        <p class="footer-summary">
+          Cổng thông tin mở rộng chân trời khoa học vũ trụ, truyền cảm hứng đam mê thiên văn học và lan tỏa khát vọng khám phá các vì sao đến thế hệ trẻ.
+        </p>
+        <div class="social-box" aria-label="Mạng xã hội">
+          <a href="#home" class="social-link" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#home" class="social-link" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="#home" class="social-link" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          <a href="#home" class="social-link" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+        </div>
+      </div>
+
+      <!-- Cột 2: Điều hướng nhanh -->
+      <div class="footer-column">
+        <h4 class="footer-title">Khám Phá Nhanh</h4>
+        <ul class="footer-nav">
+          <li><a href="#home"><i class="fa-solid fa-chevron-right"></i> Trang Chủ</a></li>
+          <li><a href="#solar-system"><i class="fa-solid fa-chevron-right"></i> Hệ Mặt Trời</a></li>
+          <li><a href="#missions"><i class="fa-solid fa-chevron-right"></i> Sứ Mệnh Không Gian</a></li>
+          <li><a href="#mysteries"><i class="fa-solid fa-chevron-right"></i> Kỳ Quan Thiên Văn</a></li>
+          <li><a href="#contact"><i class="fa-solid fa-chevron-right"></i> Hỗ Trợ & Liên Hệ</a></li>
+        </ul>
+      </div>
+
+      <!-- Cột 3: Tác giả đồ án -->
+      <div class="footer-column student-column">
+        <h4 class="footer-title">Thông Tin Tác Giả</h4>
+        <div class="student-info-card">
+          <p><i class="fa-solid fa-user-graduate"></i> Sinh viên: <strong>Nguyễn Lê Đông</strong></p>
+          <p><i class="fa-solid fa-address-card"></i> MSSV: <mark>125000126</mark></p>
+          <p><i class="fa-solid fa-laptop-code"></i> Đồ án: <strong>Landing Page Cosmos Explorer</strong></p>
+          <p class="student-desc">Chuẩn Semantic HTML5, CSS Variables, CSS Grid/Flexbox và 100% hiệu ứng CSS thuần không dùng JavaScript.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bản quyền cuối trang -->
+    <div class="footer-bottom">
+      <div class="container footer-bottom-flex">
+        <p class="copyright-line">
+          &copy; 2026 <strong>Cosmos Explorer</strong>. Thiết kế & phát triển bởi sinh viên <strong>Nguyễn Lê Đông (MSSV: 125000126)</strong>.
+        </p>
+        <p class="tech-stack-line">
+          Semantic HTML5 • CSS Variables • Pure CSS Animations • Animate.css • Zero JavaScript
+        </p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
+>>>>>>> 63c7c613a7016b0a2d52ea361c6486d46612d7e1
